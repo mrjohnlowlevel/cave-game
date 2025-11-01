@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://chnxkc74w6hy3"]
+[gd_scene load_steps=2 format=3 uid="uid://chnxkc74w6hy3"]
+
+[ext_resource type="PackedScene" uid="uid://f0i06ec8p5mo" path="res://scenes/vin.tscn" id="1_o5qli"]
 
 [node name="main" type="Node2D"]
+
+[node name="vin" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(111, 81)
