@@ -1,14 +1,11 @@
 extends CharacterBody2D
 
-func _process(_delta: float) -> void:
-    if Input.is_action_pressed("move_left"):
-        print("Test: left")
-    
-    if Input.is_action_pressed("move_right"):
-        print("Test: right")
-    
-    if Input.is_action_pressed("move_up"):
-        print("Test: Up")
-    
-    if Input.is_action_pressed("move_down"):
-        print("Test: down")
+@export var speed: int = 400
+
+func get_input() -> void:
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	self.velocity = input_direction * speed
+
+func _physics_process(_delta) -> void:
+	get_input()
+	move_and_slide()
