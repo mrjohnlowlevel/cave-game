@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3vpt44siqatr" path="res://assets/images/vincentdonalds_ss.png" id="2_7xo4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xo4n"]
-size = Vector2(32, 32)
+size = Vector2(22, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7xo4n"]
 atlas = ExtResource("2_7xo4n")
@@ -189,27 +189,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7xo4n"]
-atlas = ExtResource("2_7xo4n")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0sl24"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7xo4n")
-}],
-"loop": true,
-"name": &"idle_front",
-"speed": 5.0
-}]
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_7xo4n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -15.5)
 shape = SubResource("RectangleShape2D_7xo4n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
