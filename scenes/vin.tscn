@@ -189,7 +189,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="vin" type="CharacterBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xo4n"]
+atlas = ExtResource("2_7xo4n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sl24"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xo4n")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_7xo4n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
