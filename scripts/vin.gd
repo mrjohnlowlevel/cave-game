@@ -1,11 +1,25 @@
 extends CharacterBody2D
 
-@onready var vin_sprite = $AnimatedSprite2D
+# !GLOBAL_VAR_ECTION
 
+@onready var vin_sprite = $AnimatedSprite2D
 var speed = 125
+
+var direction_animation = {
+	Vector2(0,0): "idle_down",
+	Vector2(1,0): "walking_right",
+	Vector2(-1,0): "walking_left",
+	Vector2(0,1): "walking_down",
+	Vector2(0,-1): "walking_Up",
+}
+
+# !END_GLOBAL_VAR
 
 func _ready() -> void:
 	vin_sprite.play("idle_down")
+
+func sprite_play(sprite: AnimatedSprite2D, animation: String) -> void:
+	sprite.play(animation)
 
 func get_movemnts_inp() -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
@@ -17,35 +31,20 @@ func get_movemnts_inp() -> void:
 func facing_direction() -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 
-	if direction == Vector2(1,0):
-		vin_sprite.play("walking_right")
+	match direction:
+		Vector2(1,0): sprite_play(vin_sprite, "walking_right")
+		Vector2(-1,0): sprite_play(vin_sprite, "walking_left")
+		Vector2(0,1): sprite_play(vin_sprite, "walking_down")
+		Vector2(0,-1): sprite_play(vin_sprite, "walking_up")
+		_:
+			match vin_sprite.animation:
+				"walking_right": sprite_play(vin_sprite, "idle_right")
+				"walking_left": sprite_play(vin_sprite, "idle_left")
+				"walking_down": sprite_play(vin_sprite, "idle_down")
+				"walking_up": sprite_play(vin_sprite, "idle_up")
 
-	elif direction == Vector2(-1,0):
-		vin_sprite.play("walking_left")
-
-	elif direction == Vector2(0,1):
-		vin_sprite.play("walking_down")
-
-	elif  direction == Vector2(0,-1):
-		vin_sprite.play("walking_up")
-
-	# Diagonal check
-	elif direction.y > 0:
-		vin_sprite.play("walking_down")
-
-	elif direction.y < 0:
-		vin_sprite.play("walking_up")
-
-	else:
-		# Idle anim block check
-		if vin_sprite.animation == "walking_right":
-			vin_sprite.play("idle_right")
-		elif vin_sprite.animation == "walking_left":
-			vin_sprite.play("idle_left")
-		elif vin_sprite.animation == "walking_up":
-			vin_sprite.play("idle_up")
-		elif vin_sprite.animation == "walking_down":
-			vin_sprite.play("idle_down")
+	if direction.y < 0: sprite_play(vin_sprite, "walking_up")
+	if direction.y > 0: sprite_play(vin_sprite, "walking_down")
 
 func _physics_process(_delta) -> void:
 	get_movemnts_inp()
