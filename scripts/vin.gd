@@ -3,7 +3,6 @@ extends CharacterBody2D
 # !GLOBAL_VAR_ECTION
 
 @onready var vin_sprite = $AnimatedSprite2D
-@onready var dbg_lbl = $Label
 var speed = 125
 
 # !END_GLOBAL_VAR
@@ -30,15 +29,14 @@ func get_movemnts_inp() -> void:
 
 func facing_direction() -> void:
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-	dbg_lbl.text = "Vec2(%d,%d)" % [direction.x, direction.y]
 
-	match direction:
-		Vector2(1, 0): sprite_play(vin_sprite, "walking_right")
-		Vector2(-1, 0): sprite_play(vin_sprite, "walking_left")
-		Vector2(0, 1): sprite_play(vin_sprite, "walking_down")
-		Vector2(0, -1): sprite_play(vin_sprite, "walking_up")
-		_:
-			play_idle(vin_sprite)
+	if direction != Vector2.ZERO:
+		if abs(direction.x) > abs(direction.y):
+			sprite_play(vin_sprite, "walking_right" if direction.x > 0 else "walking_left")
+		else:
+			sprite_play(vin_sprite, "walking_down" if direction.y > 0 else "walking_up")
+	else:
+		play_idle(vin_sprite)
 
 func _physics_process(_delta) -> void:
 	get_movemnts_inp()
