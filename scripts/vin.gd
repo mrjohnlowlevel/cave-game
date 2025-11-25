@@ -5,14 +5,6 @@ extends CharacterBody2D
 @onready var vin_sprite = $AnimatedSprite2D
 var speed = 125
 
-var direction_animation = {
-	Vector2(0,0): "idle_down",
-	Vector2(1,0): "walking_right",
-	Vector2(-1,0): "walking_left",
-	Vector2(0,1): "walking_down",
-	Vector2(0,-1): "walking_Up",
-}
-
 # !END_GLOBAL_VAR
 
 func _ready() -> void:
