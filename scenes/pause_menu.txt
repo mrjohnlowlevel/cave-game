@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvd4ersld8ruw"]
+[gd_scene load_steps=4 format=3 uid="uid://cvd4ersld8ruw"]
 
 [ext_resource type="Script" uid="uid://bs0odp00v0ebc" path="res://scripts/pause_menu.gd" id="1_kukqi"]
 [ext_resource type="Texture2D" uid="uid://b0jsf03ch5w4e" path="res://assets/images/pause_menu.png" id="1_n87rw"]
-[ext_resource type="FontFile" uid="uid://tukdxangqsxm" path="res://assets/text/scratch-pixel.ttf" id="2_myx47"]
 [ext_resource type="FontFile" uid="uid://rlain3t55cpu" path="res://assets/text/ProggyTinySZ.ttf" id="3_5d2l8"]
 
 [node name="Pause Menu" type="Control"]
@@ -70,28 +69,24 @@ theme_override_constants/separation = 6
 
 [node name="stats" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 8
 text = " "
 flat = true
 
 [node name="items" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 8
 text = " "
 flat = true
 
 [node name="saves" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 8
 text = " "
 flat = true
 
 [node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 8
 text = " "
 flat = true
