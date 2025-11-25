@@ -9,7 +9,10 @@ func _ready() -> void:
 
 func get_input() -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-	self.velocity = direction * speed
+	if Input.is_action_pressed("sprint_btn"):
+		self.velocity = direction * (speed * 2)
+	else:
+		self.velocity = direction * speed
 
 func facing_direction() -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
