@@ -22,7 +22,7 @@ func play_idle(sprite: AnimatedSprite2D) -> void:
 
 func get_movemnts_inp(usr_direction: Vector2) -> void:
 	if Input.is_action_pressed("sprint_btn"):
-		self.velocity = usr_direction * (speed * 2)
+		self.velocity = usr_direction * (speed * 1.5)
 	else:
 		self.velocity = usr_direction * speed
 
