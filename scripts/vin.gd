@@ -7,7 +7,7 @@ var speed = 125
 func _ready() -> void:
 	vin_sprite.play("idle_down")
 
-func get_input() -> void:
+func get_movemnts_inp() -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	if Input.is_action_pressed("sprint_btn"):
 		self.velocity = direction * (speed * 2)
@@ -48,6 +48,6 @@ func facing_direction() -> void:
 			vin_sprite.play("idle_down")
 
 func _physics_process(_delta) -> void:
-	get_input()
+	get_movemnts_inp()
 	facing_direction()
 	move_and_slide()
