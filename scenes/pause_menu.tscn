@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvd4ersld8ruw"]
+[gd_scene load_steps=4 format=3 uid="uid://rkjgc83ewel1"]
 
-[ext_resource type="Script" uid="uid://bs0odp00v0ebc" path="res://scripts/pause_menu.gd" id="1_kukqi"]
 [ext_resource type="Texture2D" uid="uid://b0jsf03ch5w4e" path="res://assets/images/pause_menu.png" id="1_n87rw"]
 [ext_resource type="FontFile" uid="uid://rlain3t55cpu" path="res://assets/text/ProggyTinySZ.ttf" id="3_5d2l8"]
+
+[sub_resource type="GDScript" id="GDScript_myx47"]
+script/source = "extends Control
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+"
 
 [node name="Pause Menu" type="Control"]
 layout_mode = 3
@@ -11,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kukqi")
+script = SubResource("GDScript_myx47")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
