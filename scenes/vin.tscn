@@ -201,3 +201,9 @@ shape = SubResource("RectangleShape2D_7xo4n")
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_y68bg")
 animation = &"idle_down"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -57.0
+offset_right = 24.0
+offset_bottom = -34.0
