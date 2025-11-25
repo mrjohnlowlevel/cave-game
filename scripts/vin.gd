@@ -20,25 +20,23 @@ func play_idle(sprite: AnimatedSprite2D) -> void:
 		"walking_down": sprite_play(sprite, "idle_down")
 		"walking_up": sprite_play(sprite, "idle_up")
 
-func get_movemnts_inp() -> void:
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
+func get_movemnts_inp(usr_direction: Vector2) -> void:
 	if Input.is_action_pressed("sprint_btn"):
-		self.velocity = direction * (speed * 2)
+		self.velocity = usr_direction * (speed * 2)
 	else:
-		self.velocity = direction * speed
+		self.velocity = usr_direction * speed
 
-func facing_direction() -> void:
-	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-
-	if direction != Vector2.ZERO:
-		if abs(direction.x) > abs(direction.y):
-			sprite_play(vin_sprite, "walking_right" if direction.x > 0 else "walking_left")
+func facing_direction(usr_direction: Vector2) -> void:
+	if usr_direction != Vector2.ZERO:
+		if abs(usr_direction.x) > abs(usr_direction.y):
+			sprite_play(vin_sprite, "walking_right" if usr_direction.x > 0 else "walking_left")
 		else:
-			sprite_play(vin_sprite, "walking_down" if direction.y > 0 else "walking_up")
+			sprite_play(vin_sprite, "walking_down" if usr_direction.y > 0 else "walking_up")
 	else:
 		play_idle(vin_sprite)
 
 func _physics_process(_delta) -> void:
-	get_movemnts_inp()
-	facing_direction()
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
+	get_movemnts_inp(direction)
+	facing_direction(direction)
 	move_and_slide()
