@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-# !GLOBAL_VAR_ECTION
+# !GLOBAL_VAR_SECTION
 
 @onready var vin_sprite = $AnimatedSprite2D
 var speed = 125
