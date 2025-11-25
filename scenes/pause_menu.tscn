@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvd4ersld8ruw"]
+
+[ext_resource type="Script" uid="uid://bs0odp00v0ebc" path="res://scripts/pause_menu.gd" id="1_kukqi"]
+[ext_resource type="Texture2D" uid="uid://b0jsf03ch5w4e" path="res://assets/images/pause_menu.png" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://tukdxangqsxm" path="res://assets/text/scratch-pixel.ttf" id="2_myx47"]
+[ext_resource type="FontFile" uid="uid://rlain3t55cpu" path="res://assets/text/ProggyTinySZ.ttf" id="3_5d2l8"]
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kukqi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+texture = ExtResource("1_n87rw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 88.0
+offset_bottom = 149.0
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_5d2l8")
+theme_override_font_sizes/font_size = 32
+text = "STATS"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_5d2l8")
+theme_override_font_sizes/font_size = 32
+text = "ITEMS"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_5d2l8")
+theme_override_font_sizes/font_size = 32
+text = "SAVES"
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_5d2l8")
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 21.0
+offset_right = 88.0
+offset_bottom = 119.0
+scale = Vector2(1.0003115, 1.3070321)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="stats" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 8
+text = " "
+flat = true
+
+[node name="items" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 8
+text = " "
+flat = true
+
+[node name="saves" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 8
+text = " "
+flat = true
+
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 8
+text = " "
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
