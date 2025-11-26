@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://rlain3t55cpu"
-path="res://.godot/imported/ProggyTinySZ.ttf-d25df99ef83d742f8f7f024f5b9b4f1c.fontdata"
+path="res://.godot/imported/ProggyTinySZ.ttf-4e42b6f39fd342f64907aaaceed5a8c8.fontdata"
 
 [deps]
 
-source_file="res://assets/text/ProggyTinySZ.ttf"
-dest_files=["res://.godot/imported/ProggyTinySZ.ttf-d25df99ef83d742f8f7f024f5b9b4f1c.fontdata"]
+source_file="res://assets/fonts/ProggyTinySZ.ttf"
+dest_files=["res://.godot/imported/ProggyTinySZ.ttf-4e42b6f39fd342f64907aaaceed5a8c8.fontdata"]
 
 [params]
 
