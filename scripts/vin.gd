@@ -44,7 +44,7 @@ func facing_direction(usr_direction: Vector2, is_sprint: bool) -> void:
 		play_idle(vin_sprite)
 
 func _physics_process(_delta) -> void:
-	var is_sprint = false
+	var is_sprint = false # initial state
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
 
 	is_sprint = get_movemnts_inp(direction)
