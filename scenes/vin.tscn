@@ -1,7 +1,7 @@
 [gd_scene load_steps=53 format=3 uid="uid://f0i06ec8p5mo"]
 
 [ext_resource type="Script" uid="uid://pcohg2t2t2dr" path="res://scripts/vin.gd" id="1_7xo4n"]
-[ext_resource type="Texture2D" uid="uid://ducrbupayarf3" path="res://assets/images/vindiesel.png" id="2_7xo4n"]
+[ext_resource type="Texture2D" uid="uid://ducrbupayarf3" path="res://assets/images/vincentdonalds_ss.png" id="2_7xo4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xo4n"]
 size = Vector2(22, 31)
@@ -429,7 +429,7 @@ shape = SubResource("RectangleShape2D_7xo4n")
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_y68bg")
 animation = &"walking_up"
-frame_progress = 0.6363614
+frame_progress = 0.37525257
 
 [node name="Label" type="Label" parent="."]
 offset_left = -16.0
