@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3vpt44siqatr"
-path="res://.godot/imported/vincentdonalds_ss.png-c33b9b3c022f50245bfc8d5411966816.ctex"
+uid="uid://ducrbupayarf3"
+path="res://.godot/imported/vindiesel.png-e61719f31d860fc90b6d0de69734efbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/vincentdonalds_ss.png"
-dest_files=["res://.godot/imported/vincentdonalds_ss.png-c33b9b3c022f50245bfc8d5411966816.ctex"]
+source_file="res://assets/images/vindiesel.png"
+dest_files=["res://.godot/imported/vindiesel.png-e61719f31d860fc90b6d0de69734efbe.ctex"]
 
 [params]
 
