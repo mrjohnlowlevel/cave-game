@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bifm8m8kacqnb"]
+
+[ext_resource type="Script" uid="uid://chhywdja7t4x8" path="res://scripts/loon_npc.gd" id="1_l80ek"]
+[ext_resource type="Texture2D" uid="uid://7dtwq5t0wjtb" path="res://assets/images/loon_ss.png" id="1_q6aoh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6aoh"]
+atlas = ExtResource("1_q6aoh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujxt8"]
+atlas = ExtResource("1_q6aoh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahqow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6aoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujxt8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.33
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgmn7"]
+size = Vector2(16, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xosdc"]
+size = Vector2(16, 14)
+
+[node name="LoonNPC" type="CharacterBody2D"]
+script = ExtResource("1_l80ek")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ahqow")
+autoplay = "default"
+frame_progress = 0.2209511
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_qgmn7")
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_xosdc")
