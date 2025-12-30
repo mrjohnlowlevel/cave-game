@@ -1,2 +1,1 @@
-- add sprinting sprites
 - add an inventor system :(future held)

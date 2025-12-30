@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # !GLOBAL_VAR_SECTION
-
+@onready var interact_area = $InteractRange
 @onready var vin_sprite = $AnimatedSprite2D
 var speed = 125
 
@@ -43,10 +43,18 @@ func facing_direction(usr_direction: Vector2, is_sprint: bool) -> void:
 	else:
 		play_idle(vin_sprite)
 
+func update_interact_area(dir: Vector2, offset = 27): #make the interact_area follow the player's direction
+	var direction = dir
+	if direction.x != 0 and direction.y != 0: #make the interact_area not go diagonal
+		direction.x = 0
+		direction.y = direction.y / abs(direction.y)
+	if dir != Vector2.ZERO: #moves the interact_area
+		interact_area.position = direction * offset
+
 func _physics_process(_delta) -> void:
 	var is_sprint = false # initial state
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
-
 	is_sprint = get_movemnts_inp(direction)
 	facing_direction(direction, is_sprint)
+	update_interact_area(direction)
 	move_and_slide()
