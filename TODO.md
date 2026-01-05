@@ -1,1 +1,3 @@
 - add an inventor system :(future held)
+- add docs for every function
+- add docs for code style
